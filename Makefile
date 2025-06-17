@@ -16,6 +16,8 @@ OUTPUT_DIR := _output/binaries
 OUTPUT_BIN := netctl-$(GOOS)-$(ARCH)
 BIN_NAME := netctl
 
+LDFLAGS := $(VERSION_VARIABLES)
+
 .PHONY: all
 all: build
 
