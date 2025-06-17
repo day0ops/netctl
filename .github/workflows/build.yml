@@ -11,8 +11,6 @@ on:
 env:
   GOPROXY: https://proxy.golang.org
   GO_VERSION: '1.24.0'
-permissions:
-  contents: read
 jobs:
   build:
     runs-on: ubuntu-22.04
