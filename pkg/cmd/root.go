@@ -52,9 +52,9 @@ func createCmd() *cobra.Command {
 
 	// add flags
 	addCommonFlags(createCmd)
-	createCmd.Flags().StringVarP(&rootCmdArgs.Bridge, "bridge", "b", "virbr0", "Name of the network bridge")
+	createCmd.Flags().StringVarP(&rootCmdArgs.Bridge, "bridge", "b", config.DefaultBridge, "Name of the network bridge")
 	createCmd.Flags().StringVarP(&rootCmdArgs.Subnet, "subnet-cidr", "s", "", "Subnet of the network (for e.g. 10.89.0.1/24")
-	createCmd.Flags().StringVarP(&rootCmdArgs.ConnectionURI, "uri", "u", "qemu:///system", "libvirt connection URI")
+	createCmd.Flags().StringVarP(&rootCmdArgs.ConnectionURI, "uri", "u", config.DefaultQemuSystem, "libvirt connection URI")
 	createCmd.MarkFlagRequired("subnet-cidr")
 
 	return createCmd

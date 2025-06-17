@@ -9,7 +9,7 @@ GOARCH ?= $(shell echo "$(GOARCH_$(ARCH))")
 
 VERSION := $(shell git describe --tags --always)
 REVISION := $(shell git rev-parse HEAD)
-PACKAGE := github.com/day0ops/netctl/config
+PACKAGE := github.com/day0ops/netctl/pkg/config
 VERSION_VARIABLES := -X $(PACKAGE).appVersion=$(VERSION) -X $(PACKAGE).revision=$(REVISION)
 
 OUTPUT_DIR := _output/binaries

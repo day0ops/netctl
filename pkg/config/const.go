@@ -1,7 +1,8 @@
 package config
 
 const (
-	QemuSystem                        = "qemu:///system"
+	DefaultQemuSystem                 = "qemu:///system"
+	DefaultBridge                     = "virbr0"
 	DefaultPrivateMinikubeNetworkName = "minikube-net"
 
 	NetworkTmpl = `
