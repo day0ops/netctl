@@ -52,15 +52,15 @@ func FreeSubnet(startSubnet string, step, tries int) (*Parameters, error) {
 			if !taken {
 				if reservation, err := reserveSubnet(subnet); err == nil {
 					n.reservation = reservation
-					log.Info("using free subnet %s: %+v", n.CIDR, n)
+					log.Infof("using free subnet %s: %+v", n.CIDR, n)
 					return n, nil
 				}
-				log.Info("skipping subnet %s that is reserved: %+v", n.CIDR, n)
+				log.Infof("skipping subnet %s that is reserved: %+v", n.CIDR, n)
 			} else {
-				log.Info("skipping subnet %s that is taken: %+v", n.CIDR, n)
+				log.Infof("skipping subnet %s that is taken: %+v", n.CIDR, n)
 			}
 		} else {
-			log.Info("skipping subnet %s that is not private", n.CIDR)
+			log.Infof("skipping subnet %s that is not private", n.CIDR)
 		}
 		prefix, _ := net.ParseIP(n.IP).DefaultMask().Size()
 		nextSubnet := net.ParseIP(currSubnet).To4()
